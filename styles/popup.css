@@ -1,0 +1,194 @@
+/* Popup / Modal Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.popup-content {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    max-width: 750px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.4s ease;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-left {
+    flex: 1;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.popup-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-right {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.popup-right h1 {
+    font-size: 2rem;
+    color: #e05c5c;
+    margin: 0;
+}
+
+.popup-right h2 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.popup-right p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.popup-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.popup-right input[type="email"] {
+    padding: 12px 16px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.popup-right input[type="email"]:focus {
+    border-color: #e05c5c;
+}
+
+.popup-right .signup-btn {
+    padding: 12px;
+    background: linear-gradient(135deg, #e05c5c, #ff8c42);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.popup-right .signup-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.no-thanks {
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.no-thanks:hover {
+    color: #666;
+}
+
+.popup-right .terms {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-align: center;
+}
+
+.popup-right .terms a {
+    color: #e05c5c;
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Toast notification */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: #333;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: toastIn 0.3s ease;
+    min-width: 220px;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+    .popup-content {
+        flex-direction: column;
+    }
+    .popup-left {
+        min-height: 180px;
+    }
+    .popup-right {
+        padding: 24px 20px;
+    }
+}

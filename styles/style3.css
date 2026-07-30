@@ -1,0 +1,68 @@
+/* style3.css - Preloader & Scroll animations */
+
+/* ===== Preloader ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.flavor-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    animation: flavorBounce 1.2s ease-in-out infinite;
+}
+
+.flavor-circle.chocolate  { background: #7B3F00; animation-delay: 0s; }
+.flavor-circle.strawberry { background: #FC5185; animation-delay: 0.15s; }
+.flavor-circle.vanilla    { background: #F5E6A3; animation-delay: 0.3s; }
+.flavor-circle.mint       { background: #3CBAB1; animation-delay: 0.45s; }
+.flavor-circle.blueberry  { background: #4B0082; animation-delay: 0.6s; }
+.flavor-circle.mango      { background: #FF9F00; animation-delay: 0.75s; }
+.flavor-circle.pistachio  { background: #93C572; animation-delay: 0.9s; }
+.flavor-circle.raspberry  { background: #E30B5C; animation-delay: 1.05s; }
+
+@keyframes flavorBounce {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+    50%       { transform: translateY(-24px) scale(1.15); opacity: 0.7; }
+}
+
+/* ===== Scroll-triggered animations ===== */
+.rightani,
+.leftani,
+.bottomani {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.rightani  { transform: translateX(60px); }
+.leftani   { transform: translateX(-60px); }
+.bottomani { transform: translateY(50px); }
+
+.rightani.animate,
+.leftani.animate,
+.bottomani.animate {
+    opacity: 1;
+    transform: translate(0);
+}
