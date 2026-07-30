@@ -1,4 +1,4 @@
-.home {
+﻿.home {
     min-height: 95dvh;
     display: flex;
     align-items: center;
@@ -256,8 +256,8 @@
 }
 
 
-/*------ WHY icyCO? styles----------------*/
-.why-icyco {
+/*------ WHY Cool ice-cream? styles----------------*/
+.why-Cool ice-cream {
     margin-bottom: 45px;
     text-align: center;
 }

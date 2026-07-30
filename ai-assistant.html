@@ -16,7 +16,7 @@
    <!--  -->
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-   <title>Icyco AI Assistant</title>
+   <title>Cool ice-cream AI Assistant</title>
    <style>
       * {
          box-sizing: border-box;
@@ -157,7 +157,7 @@
    <!-- nav bar -->
    <div class="nav-bar">
       <div class="logo">
-         <img src="./images/logo.png" alt="icyco-logo" height="40px" width="40px">
+         <img src="./images/logo.png" alt="Cool ice-cream-logo" height="40px" width="40px">
          <a href="./index.html" style="font-family: 'Press Start 2P', monospace; font-size: 16px; color: #FFD900; text-shadow: 0 0 10px rgba(255,217,0,0.5), 2px 2px 0 #6B2D8B;">Cool ice-cream</a>
       </div>
       <div class="nav-links">
@@ -210,7 +210,7 @@
    </div>
 
    <div class="chat-header">
-      Icyco AI Assistant 🍦
+      Cool ice-cream AI Assistant 🍦
    </div>
 
    <div class="chat-container" id="chat">
@@ -320,7 +320,7 @@
             chats.push(...(storedChats.chats));
          } else {
             chats.push(
-               { type: 'assistant', text: 'Hi! I\'m your Icyco assistant. Ask me anything about our products or services!' },
+               { type: 'assistant', text: 'Hi! I\'m your Cool ice-cream assistant. Ask me anything about our products or services!' },
             );
             localStorage.setItem('icyco_chats', JSON.stringify({chats: chats, last_updated_at: Date.now()})); // Initialize if not present
          }
